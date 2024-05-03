@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply min-h-screen w-full bg-[#030922] text-white;
+    }
+}
+
+.animated-content {
+    animation: scrolling 20s linear infinite;
+}
+.animated-content:hover {
+    animation-play-state: paused;
+}
