@@ -5,7 +5,11 @@ export default {
         container: {
             center: true
         },
-        extend: {}
+        extend: {
+            colors: {
+                'main-blue': '#2063ec'
+            }
+        }
     },
     plugins: []
 }

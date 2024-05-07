@@ -4,13 +4,24 @@
 
 @layer base {
     body {
-        @apply min-h-screen w-full bg-[#030922] text-white;
+        @apply min-h-screen w-full bg-[#030922] text-white selection:bg-black selection:text-blue-300;
     }
 }
 
-.animated-content {
-    animation: scrolling 20s linear infinite;
-}
-.animated-content:hover {
-    animation-play-state: paused;
+@layer components {
+    @keyframes scrolling {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-200%);
+        }
+    }
+    .animated-content {
+        animation: scrolling 30s linear infinite;
+    }
+    .animated-content:hover {
+        animation-play-state: paused;
+    }
 }

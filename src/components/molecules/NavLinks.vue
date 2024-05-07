@@ -19,6 +19,6 @@
 <script setup lang="ts"></script>
 <style scoped>
 li .router-link-active {
-    @apply font-bold;
+    @apply font-semibold text-main-blue;
 }
 </style>

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@vue-hero-icons/solid": "^1.7.2",
+    "millify": "^6.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue3-smooth-scroll": "^0.8.1"
