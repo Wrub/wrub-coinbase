@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import format from '@/composables/useFormatNumber'
+import formatNumber from '@/composables/useFormatNumber'
 import { priceChanged } from '@/composables/usePriceChange'
 defineProps({
     name: String,
@@ -22,8 +21,8 @@ defineProps({
             </div>
         </div>
         <div>
-            <p class="font-semibold">${{ format(price) }}</p>
-            <p v-if="percentualChange && priceChanged(percentualChange)" class="text-sm">{{ percentualChange }}</p>
+            <p class="font-semibold">${{ formatNumber(price) }}</p>
+            <p v-if="percentualChange && priceChanged(percentualChange)" class="text-sm text-red-400">{{ percentualChange }}</p>
             <p v-else class="text-sm text-green-400">{{ percentualChange }}</p>
         </div>
     </a>

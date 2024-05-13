@@ -7,13 +7,12 @@
     </button>
 </template>
 <script setup lang="ts">
-import { defineProps } from 'vue'
 const props = defineProps({
     link: String,
     innerColor: {
         type: String,
         default: 'transparent',
-        validator: (value: String) => ['transparent', 'blue'].includes(value)
+        validator: (string: String) => ['transparent', 'blue'].includes(string)
     }
 })
 </script>

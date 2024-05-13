@@ -1,4 +1,4 @@
-export interface Coin {
+export interface ICoin {
     uuid: string
     symbol: string
     name: string
