@@ -27,5 +27,8 @@ npm run build
 npm run lint
 ```
 
+## Libs
+[SwiperJS](https://swiperjs.com/) for the upper coins display
+
 ## References
-    Shoutout to [SelemonDev](https://github.com/selemondev) that posted Vue projects ideas, and this was one of the ideas.
+Shoutout to [SelemonDev](https://github.com/selemondev) that posted Vue projects ideas, and this was one of them.
