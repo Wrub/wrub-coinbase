@@ -10,15 +10,12 @@
             <li>
                 <router-link to="/coins">Coins</router-link>
             </li>
-            <li>
-                <router-link to="/news">News</router-link>
-            </li>
         </ul>
     </div>
 </template>
 <script setup lang="ts"></script>
 <style scoped>
 li .router-link-active {
-    @apply font-semibold text-main-blue;
+    @apply font-semibold text-main-blue transition-colors duration-300;
 }
 </style>

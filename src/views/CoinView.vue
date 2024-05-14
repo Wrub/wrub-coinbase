@@ -3,7 +3,7 @@ import CoinsTable from '@/components/molecules/CoinsTable.vue'
 </script>
 
 <template>
-    <div class="container pt-20">
+    <div class="container py-16 lg:py-20">
         <CoinsTable />
     </div>
 </template>

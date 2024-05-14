@@ -3,7 +3,10 @@ export default {
     purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     theme: {
         container: {
-            center: true
+            center: true,
+            padding: {
+                DEFAULT: '2.5rem'
+            }
         },
         extend: {
             colors: {

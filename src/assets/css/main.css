@@ -4,24 +4,15 @@
 
 @layer base {
     body {
-        @apply min-h-screen w-full bg-[#030922] text-white selection:bg-black selection:text-blue-300;
+        @apply min-h-screen w-full bg-[#030922] text-white selection:bg-white selection:text-blue-800;
     }
 }
 
 @layer components {
-    @keyframes scrolling {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-200%);
-        }
+    .negative-change {
+        @apply font-medium text-red-500;
     }
-    .animated-content {
-        animation: scrolling 30s linear infinite;
-    }
-    .animated-content:hover {
-        animation-play-state: paused;
+    .positive-change {
+        @apply font-medium text-green-500;
     }
 }

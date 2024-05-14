@@ -1,22 +1,22 @@
 <template>
     <td class="flex items-center gap-2">
-        <img width="28" height="28" :src="iconUrl" :alt="`${coinName} Icon`" />
+        <img class="h-5 w-5 sm:h-6 sm:w-6" width="24" height="24" :src="iconUrl" :alt="`${coinName} Icon`" loading="lazy" />
         <div class="flex flex-col xl:flex-row xl:gap-2">
             <h3 class="font-bold">{{ coinName }}</h3>
             <h2 class="opacity-50">{{ coinSymbol }}</h2>
         </div>
     </td>
     <td>
-        <p class="font-semibold">${{ formatNumber(price) }}</p>
+        <p class="font-medium">${{ formatNumber(price) }}</p>
     </td>
     <td class="change">
-        <p v-if="priceChanged(change)" class="text-green-400">
-            <ChevronUpIcon />
-            <span>{{ change }}</span>
+        <p v-if="!priceChanged(change)" class="positive-change">
+            <ChevronUpIcon class="hidden sm:block" />
+            <span>{{ change }}%</span>
         </p>
-        <p v-else class="text-red-400">
-            <ChevronDownIcon />
-            <span>{{ change }}</span>
+        <p v-else class="negative-change">
+            <ChevronDownIcon class="hidden sm:block" />
+            <span>{{ change }}%</span>
         </p>
     </td>
     <td>
@@ -51,5 +51,8 @@ defineProps<Props>()
 }
 .change svg {
     @apply h-4 w-4;
+}
+td {
+    @apply px-2 py-2 sm:px-0;
 }
 </style>

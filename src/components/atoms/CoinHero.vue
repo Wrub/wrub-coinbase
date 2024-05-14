@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-    <a class="flex w-fit min-w-40 flex-row justify-between py-3" :href="url" target="_blank">
+    <a class="flex w-fit min-w-40 flex-row justify-between gap-1 py-3" :href="url" target="_blank">
         <div class="flex gap-2">
             <img class="object-contain" width="32" height="32" :src="imgUrl" :alt="`${name} coin logo`" />
             <div>
@@ -22,8 +22,8 @@ defineProps({
         </div>
         <div>
             <p class="font-semibold">${{ formatNumber(price) }}</p>
-            <p v-if="percentualChange && priceChanged(percentualChange)" class="text-sm text-red-400">{{ percentualChange }}</p>
-            <p v-else class="text-sm text-green-400">{{ percentualChange }}</p>
+            <p v-if="percentualChange && priceChanged(percentualChange)" class="negative-change text-sm">{{ percentualChange }}</p>
+            <p v-else class="negative-change text-sm">{{ percentualChange }}</p>
         </div>
     </a>
 </template>

@@ -1,39 +1,37 @@
 <template>
-    <div v-if="loadingCoins">
-        <span>Loading Coins</span>
-    </div>
-    <table v-else class="m-auto w-full text-left md:w-3/4 2xl:w-full">
-        <thead>
-            <tr>
+    <CircleLoader :loading-prop="loadingCoins">
+        <table class="m-auto w-full text-left text-sm sm:text-base md:w-3/4 2xl:w-full">
+            <thead>
                 <th>Name</th>
                 <th>Price</th>
                 <th>24hrs</th>
                 <th>Market Cap</th>
                 <th class="hidden lg:block">Listed At</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr :key="coin.uuid" v-for="coin in coins">
-                <CoinCard
-                    :coin-name="coin.name"
-                    :coin-symbol="coin.symbol"
-                    :icon-url="coin.iconUrl"
-                    :price="coin.price"
-                    :change="coin.change"
-                    :market-cap="coin.marketCap"
-                    :listed-at="coin.listedAt"
-                />
-            </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <tr :key="coin.uuid" v-for="coin in coins">
+                    <CoinRow
+                        :coin-name="coin.name"
+                        :coin-symbol="coin.symbol"
+                        :icon-url="coin.iconUrl"
+                        :price="coin.price"
+                        :change="coin.change"
+                        :market-cap="coin.marketCap"
+                        :listed-at="coin.listedAt"
+                    />
+                </tr>
+            </tbody>
+        </table>
+    </CircleLoader>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import CoinCard from '@/components/atoms/CoinCard.vue'
 import { useCoins } from '@/composables/useCoins'
 import type { ICoin } from '@/types/coins.interface'
 import { onMounted } from 'vue'
+import CircleLoader from '@/components/atoms/CircleLoader.vue'
+import CoinRow from '@/components/atoms/CoinRow.vue'
 const coins = ref<ICoin[]>([])
 const loadingCoins = ref(true)
 
@@ -47,3 +45,12 @@ onMounted(async () => {
     }
 })
 </script>
+
+<style scoped>
+tr {
+    border-bottom: 1px solid gray;
+}
+th {
+    padding-bottom: 1rem;
+}
+</style>

@@ -14,7 +14,7 @@ const router = createRouter({
             component: () => import('@/views/CoinView.vue')
         },
         {
-            path: '/*/',
+            path: '/:catchAll(.*)',
             name: 'PageNotFound',
             component: () => import('@/views/PageNotFoundView.vue')
         }

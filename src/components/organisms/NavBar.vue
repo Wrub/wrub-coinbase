@@ -5,7 +5,7 @@ import NavLinks from '../molecules/NavLinks.vue'
 
 <template>
     <header>
-        <nav class="flex flex-col gap-4">
+        <nav class="flex flex-col gap-8">
             <NavCoins />
             <NavLinks />
         </nav>

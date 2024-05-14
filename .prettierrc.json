@@ -3,7 +3,7 @@
   "semi": false,
   "tabWidth": 4,
   "singleQuote": true,
-  "printWidth": 180,
+  "printWidth": 150,
   "trailingComma": "none",
   "plugins": ["prettier-plugin-tailwindcss"]
 }

@@ -9,14 +9,19 @@ import { Autoplay } from 'swiper/modules'
 
 const coins = ref<ICoin[]>([])
 
-const swiper = new Swiper('.swiper', {
-    modules: [Autoplay],
-    autoplay: true,
-    grabCursor: true,
-    freeMode: true
-})
-
 onMounted(async () => {
+    new Swiper('.swiper', {
+        modules: [Autoplay],
+        autoplay: {
+            delay: 1000
+        },
+        speed: 2000,
+        grabCursor: true,
+        freeMode: true,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+        loop: true
+    })
     try {
         const coinData = await useCoins()
         coins.value = coinData as ICoin[]
@@ -31,7 +36,14 @@ onMounted(async () => {
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" :key="coin.uuid" v-for="coin in coins">
-                    <CoinHero :name="coin.name" :symbol="coin.symbol" :img-url="coin.iconUrl" :url="coin.coinrankingUrl" :price="coin.price" :percentual-change="coin.change" />
+                    <CoinHero
+                        :name="coin.name"
+                        :symbol="coin.symbol"
+                        :img-url="coin.iconUrl"
+                        :url="coin.coinrankingUrl"
+                        :price="coin.price"
+                        :percentual-change="coin.change"
+                    />
                 </div>
             </div>
         </div>
