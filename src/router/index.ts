@@ -15,10 +15,15 @@ const router = createRouter({
         },
         {
             path: '/:catchAll(.*)',
-            name: 'PageNotFound',
+            name: 'Page Not Found',
             component: () => import('@/views/PageNotFoundView.vue')
         }
     ]
+})
+
+router.beforeEach((to, from, next) => {
+    document.title= String(to.name) + ` | Wrub Coinbase` || "Wrub | Coinbase"
+    next()
 })
 
 export default router

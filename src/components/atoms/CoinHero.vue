@@ -14,7 +14,7 @@ defineProps({
 <template>
     <a class="flex w-fit min-w-40 flex-row justify-between gap-1 py-3" :href="url" target="_blank">
         <div class="flex gap-2">
-            <img class="object-contain" width="32" height="32" :src="imgUrl" :alt="`${name} coin logo`" />
+            <img class="object-contain" width="28" height="28" :src="imgUrl" :alt="`${name} coin logo`" />
             <div>
                 <p class="font-semibold">{{ symbol }}</p>
                 <p class="max-w-20 overflow-hidden text-ellipsis text-nowrap text-xs">{{ name }}</p>

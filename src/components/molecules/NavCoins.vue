@@ -10,7 +10,7 @@ import { Autoplay } from 'swiper/modules'
 const coins = ref<ICoin[]>([])
 
 onMounted(async () => {
-    new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper', {
         modules: [Autoplay],
         autoplay: {
             delay: 1000
@@ -19,9 +19,10 @@ onMounted(async () => {
         grabCursor: true,
         freeMode: true,
         slidesPerView: 'auto',
-        spaceBetween: 15,
+        spaceBetween: 30,
         loop: true
     })
+    swiper.init()
     try {
         const coinData = await useCoins()
         coins.value = coinData as ICoin[]
