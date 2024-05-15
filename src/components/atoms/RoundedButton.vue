@@ -9,21 +9,27 @@
     </router-link>
 </template>
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
+
 interface Props {
     link?: String
     innerColor: 'transparent' | 'blue'
 }
 const props = defineProps<Props>()
 
-let toLink: String | undefined = undefined
+let toLink: RouteLocationRaw | undefined = undefined
 
 try {
     if (!props.link) {
         throw new Error('Link is missing at button component')
     } else {
-        toLink = props.link
+        toLink = props.link as RouteLocationRaw
     }
-} catch (error) {
-    console.error(error.message)
+} catch (error: unknown) {
+    if (error instanceof Error) {
+        console.error(error.message)
+    } else {
+        console.error('An unknown error occurred.')
+    }
 }
 </script>

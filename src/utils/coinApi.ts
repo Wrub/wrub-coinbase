@@ -1,7 +1,7 @@
 export const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '1750abdb2cmshd17289e6b27b806p1d2308jsncd5b6d529efc',
+        'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
     }
 }
