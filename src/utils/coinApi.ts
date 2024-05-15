@@ -13,7 +13,6 @@ export const useFetch = async (url: string, options: any) => {
     const cachedData = getCachedData(cacheKey);
 
     if (cachedData) {
-        console.log(cachedData);
         return cachedData
     }
 
