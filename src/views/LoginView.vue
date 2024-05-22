@@ -18,7 +18,7 @@
                                     <label for="password">Password</label>
                                     <input type="password" id="password" placeholder="Insert your Password" required v-model="formData.password" />
                                 </div>
-                                <span class="my-5 text-sm text-stone-500">Please, get user through the documentation</span>
+                                <span class="my-5 text-sm text-stone-500">Please, get user through the documentation (Not available yet)</span>
                             </div>
                             <button
                                 class="absolute bottom-16 my-12 rounded-md border-2 border-columbia-blue px-10 py-1.5 text-white shadow shadow-main-blue transition-colors duration-150 active:bg-columbia-blue active:text-black active:shadow-none lg:bottom-10"

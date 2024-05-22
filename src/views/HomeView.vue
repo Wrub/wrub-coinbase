@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import RoundedButton from '@/components/atoms/RoundedButton.vue'
-import NavBar from '@/components/organisms/NavBar.vue'
 </script>
 
 <template>
-    <NavBar />
     <main>
         <section class="container flex min-h-[80vh] flex-col items-center justify-between gap-10 py-10 lg:flex-row lg:gap-0 lg:py-0">
             <div class="flex max-w-lg flex-col gap-4">
