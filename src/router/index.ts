@@ -14,6 +14,17 @@ const router = createRouter({
             component: () => import('@/views/CoinView.vue')
         },
         {
+            path: '/login',
+            name: 'Login',
+            component: () => import('@/views/LoginView.vue')
+        },
+        {
+            path: '/dashboard',
+            name: 'Dashboard',
+            component: () => import('@/views/CoinView.vue'),
+            meta: { requiresAuth: true }
+        },
+        {
             path: '/:catchAll(.*)',
             name: 'Page Not Found',
             component: () => import('@/views/PageNotFoundView.vue')
@@ -22,8 +33,14 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    document.title= String(to.name) + ` | Wrub Coinbase` || "Wrub | Coinbase"
-    next()
+    const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
+    const token = localStorage.getItem('token')
+
+    if (requiresAuth && !token) {
+        next('/')
+    } else {
+        next()
+    }
 })
 
 export default router

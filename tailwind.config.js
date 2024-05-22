@@ -10,7 +10,8 @@ export default {
         },
         extend: {
             colors: {
-                'main-blue': '#2063ec'
+                'main-blue': '#2063ec',
+                'columbia-blue': '#9bddff'
             }
         }
     },

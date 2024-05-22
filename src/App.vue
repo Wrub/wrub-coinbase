@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import Navbar from './components/organisms/NavBar.vue'
-</script>
+<script setup lang="ts"></script>
+
 <template>
-    <div>
-        <Navbar />
-        <router-view />
-    </div>
+    <router-view />
 </template>

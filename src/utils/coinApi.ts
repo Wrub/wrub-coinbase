@@ -1,4 +1,4 @@
-import { setCacheData, getCachedData } from './cacheUtil';
+import { setCacheData, getCachedData } from './cacheUtil'
 
 export const options = {
     method: 'GET',
@@ -9,8 +9,8 @@ export const options = {
 }
 
 export const useFetch = async (url: string, options: any) => {
-    const cacheKey = url + JSON.stringify(options);
-    const cachedData = getCachedData(cacheKey);
+    const cacheKey = url + JSON.stringify(options)
+    const cachedData = getCachedData(cacheKey)
 
     if (cachedData) {
         return cachedData
@@ -19,7 +19,7 @@ export const useFetch = async (url: string, options: any) => {
     const response = await fetch(url, options)
     const data = await response.json()
 
-    setCacheData(cacheKey, data);
+    setCacheData(cacheKey, data)
 
     return data
 }

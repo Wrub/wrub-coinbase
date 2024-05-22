@@ -10,6 +10,9 @@
             <li>
                 <router-link to="/coins">Coins</router-link>
             </li>
+            <li>
+                <router-link to="/login">Login</router-link>
+            </li>
         </ul>
     </div>
 </template>
