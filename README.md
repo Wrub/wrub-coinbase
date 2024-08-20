@@ -1,6 +1,7 @@
 # wrub-coinbase
 
-This is a Coinbase based application, using Vue3, TypeScript, Vite and TailwindCSS
+This is a Coinbase based application, using Vue3, TypeScript, Vite and TailwindCSS.
+Using a external API to fetch data
 
 
 ## Project Setup
